@@ -1,0 +1,20 @@
+{
+  "name": "personal_budget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Pedro Bueno Castañeda <pedro.buenocastaneda@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mariadb": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="projects-style.css">
+    <script src="https://kit.fontawesome.com/e569e22f5b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo"><span>P</span>edro.</h1>
+                <ul id="sidemenu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+    </div>
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <br>
+            <div class="project-list">
+                <div>
+                    <h2 id="personal-budget">Personal Budget</h2>
+                    <p>This project is an API I made using NodeJS and Express. It uses a method of budgeting using "envelopes". Which essentially involves different categories that relate to certain events in your life where you can decide where to invest/save your money.</p>
+                    <button type="button" class="btn"><a href="#">Try Out API</a></button>
+                    <button type="button" class="btn">View Project Repository</button>
+                </div>
+                <div>
+                    <h2 id="connect-four">Connect Four</h2>
+                    <p>This project is coded in python. It's a simple game that can be ran in an IDE such as Visual Studio Code. In the game's current state it runs in the terminal and two players can play against each other. Currently I am working on creating an AI that the user can play against.</p>
+                </div>
+                <div>
+                    <h2 id="scavenger-hunt">Scavenger Hunt</h2>
+                    <p>Scavenger Hunt is a 3D first person game. Where the objective is to locate items that are randomly placed around the map. In the map you will also find portals that will lead you to puzzle rooms which award the player with a bonus item upon successful completion of the puzzle. What makes Scavenger Hunt interesting is it is also a procedurally generated game meaning the map generated will almost never be the same twice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--SCRIPT FUNCTIONALITY-->
+    <!--Side Menu Functionality-->
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = 0;
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

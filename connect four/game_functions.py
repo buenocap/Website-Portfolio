@@ -64,13 +64,33 @@ class Tic_Tac_Toe:
         return game_board;
     
     def displayBoard(self):
-        print(self.game_board);
+        print(" 1  2  3  4  5  6  7");
+        print(" ---------------------");
+        for x in self.game_board:
+            print(x)
         return 0;
     
     def placeToken(self,token):
-        placement = int(input("Please enter number 0-6: "));
+        x = 5;
+        valid = False;
+        placement = int(input("Player {token} please enter number 1-7: ".format(token=token)))-1;
+        
         print("\n");
-        self.game_board[placement][0]=token;
-        self.displayBoard();    
+        if(placement < 7 and placement > -1):
+            while(valid != True):
+                if(self.game_board[x][placement] == 0):
+                    self.game_board[x][placement] = token;
+                    valid = True;
+                elif (x == -1):
+                    self.displayBoard();
+                    print("Row is full please try again");
+                    self.placeToken(token);
+                else:
+                    x -= 1;  
+        else:
+            self.displayBoard();
+            print("Invalid selection, please try again") 
+            self.placeToken(token);
+        self.displayBoard();                 
         return 0;
         

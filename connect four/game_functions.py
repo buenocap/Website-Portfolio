@@ -93,4 +93,17 @@ class Tic_Tac_Toe:
             self.placeToken(token);
         self.displayBoard();                 
         return 0;
+    
+    def checkWin(self, currentX, currentY, player):
+        tracker = 0;
+        #Checking left win condition
+        while(currentY > -1):
+            if(self.game_board[currentX][currentY] == 0):
+                currentY -=1;
+            tracker +=1;
+            if(tracker == 4):
+                print("Player {player} has won the match!".format(player.get_token()));
+                self.game_status = True;
+        
+        
         

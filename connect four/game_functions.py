@@ -115,7 +115,7 @@ class Tic_Tac_Toe:
                 break;
                 
             if(tracker == 4):
-                print("Player {player} has won the match!".format(player=player));
+                print("Player {player} has won the match!\n".format(player=player));
                 self.game_status = False;
                 return 0;    
             currentY -=1;

@@ -21,9 +21,5 @@ while(currentGame.get_game_status):
         quit();
     else:
         print("Invalid selection please try again.\nReturning to main menu...\n")
-        time.sleep(2); 
-
-    
-
-
-
+        time.sleep(2);
+        

@@ -7,9 +7,10 @@ def PvP(game):
     player_two = game_functions.player(2);
     game.create_board();
     game.display_board();
-    while(game.game_status == False):
+    while(game.game_status):
         game.place_token(player_one.get_token());
-        game.check_win();
+        if(game.game_status == False):
+            break;
         game.place_token(player_two.get_token());
     return 0;
 

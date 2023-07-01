@@ -92,24 +92,24 @@ class Tic_Tac_Toe:
         placement = int(input("Player {token} please enter number 1-7: ".format(token=token)))-1;
 
         if(placement > -1 and placement < 7):
-            for x in reversed(range(-1,game_board_length)):
-                if x == -1:
+            for row in reversed(range(-1,game_board_length)):
+                if row == -1:
                     print("Row selected is full make another selection!");
                     self.display_board();
                     self.place_token(token);
-                if(self.game_board[x][placement] == 0):
-                    self.game_board[x][placement] = token;
+                if(self.game_board[row][placement] == 0):
+                    self.game_board[row][placement] = token;
                     self.display_board();
-                    game_status = self.check_win(x,placement,token);
+                    game_status = self.check_win(row,placement,token);
                     return 0
         
-    def check_win(self, currentX, currentY, player):
+    def check_win(self, row, column, player):
         tracker = 0;
 
         #Checking left win condition
-        while(currentY > -1):
+        while(column > -1):
             
-            if(self.game_board[currentX][currentY] == player):
+            if(self.game_board[row][column] == player):
                 tracker +=1;
             else:                                                               #We want the program to check for a continuious connected player tokens, if we don't break it will continue looping and counting off all instances of player
                 break;
@@ -118,7 +118,7 @@ class Tic_Tac_Toe:
                 print("Player {player} has won the match!\n".format(player=player));
                 self.game_status = False;
                 return 0;    
-            currentY -=1;
+            column -=1;
         
         #TODO: Check right win condition
             

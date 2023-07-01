@@ -113,8 +113,7 @@ class Tic_Tac_Toe:
             
             if(self.game_board[row][column] == player):
                 tracker +=1;
-            else:                                                               # We want the program to check for a continuious connected player tokens, if we don't break it will continue looping and counting off all instances of player
-                tracker = 0;                                                    # Reset tracker value to zero to avoid miscount
+            else:                                                               # We want the program to check for a continuious connected player tokens, if we don't break it will continue looping and counting off all instances of player                                               # Reset tracker value to zero to avoid miscount
                 break;
                 
             if(tracker == 4):
@@ -122,46 +121,65 @@ class Tic_Tac_Toe:
                 self.game_status = False;
                 return 0;    
             column -=1;
-            
+        
+        tracker = 0;
         column = original_column_value;                                         # Reset column to it's original value to avoid error
         
-        #TODO: Check right win condition
+        #Check right win condition
         while(column < 7):
             
             if(self.game_board[row][column] == player):
-                tracker += 1;
+                tracker +=1;
             else:
-                tracker = 0;
                 break;
             
             if(tracker == 4):
                 print("Player {player} has won the match!\n".format(player=player));
                 self.game_status = False;
                 return 0;
-            column += 1;
-            
+            column +=1;
+         
+        tracker = 0;   
         column = original_column_value;        
         
-        #TODO: Check down win conition
+        #Check down win conition
         while(row < 6):
             
             if(self.game_board[row][column] == player):
                 tracker +=1;
             else:
-                tracker = 0;
                 break;
             
             if(tracker == 4):
                 print("Player {player} has won the match!\n".format(player=player));
                 self.game_status = False;
                 return 0;
-            print("checking [{row}][{column}]".format(row=row,column=column));
             row +=1;
         
+        tracker = 0;
         row = original_row_value;
         
         #TODO: Check left diagonal
+        while(row < 6 and column > -1):
+            
+            if(self.game_board[row][column] == player):
+                tracker +=1;
+            else:
+                break;
+            
+            if(tracker == 4):
+                print("Player {player} has won the match!\n".format(player=player));
+                self.game_status = False;
+                return 0;
+            
+            print("checking [{row}][{column}]".format(row=row,column=column));
+            row +=1;
+            column -=1;
         
+        tracker = 0;  
+        row = original_row_value;
+        column = original_column_value;
+
         #TODO: check right diagonal
 
         return 0;

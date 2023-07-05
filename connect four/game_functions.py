@@ -159,7 +159,7 @@ class Tic_Tac_Toe:
         tracker = 0;
         row = original_row_value;
         
-        #TODO: Check left diagonal
+        #Check left diagonal
         while(row < 6 and column > -1):
             
             if(self.game_board[row][column] == player):
@@ -172,7 +172,6 @@ class Tic_Tac_Toe:
                 self.game_status = False;
                 return 0;
             
-            print("checking [{row}][{column}]".format(row=row,column=column));
             row +=1;
             column -=1;
         
@@ -181,5 +180,20 @@ class Tic_Tac_Toe:
         column = original_column_value;
 
         #TODO: check right diagonal
+        while(row > -1 and column > 7):
+            
+            if(self.game_board[row][column] == player):
+                tracker +=1;
+            else:
+                break;
+            
+            if(tracker == 4):
+                print("Player {player} has won the match!\n".format(player=player));
+                self.game_status = False;
+                return 0;
+            
+            print("checking [{row}][{column}]".format(row=row,column=column));
+            row -=1;
+            column +=1;
 
         return 0;

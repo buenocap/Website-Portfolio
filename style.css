@@ -17,7 +17,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(./images/desktop-header.png);
+    background-image: url(./images/portfolio_header.webp);
     background-size:cover;
     background-position: center;
 }
@@ -100,6 +100,7 @@ nav ul li a:hover::after{
 .about-col-1{
     flex-basis: 35%;
 }
+
 .about-col-1 img{
     width: 100%;
     border-radius: 15px;
@@ -300,7 +301,8 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(./images/mobile_header.png);
+        background-image: url(./images/portfolio_header.webp);
+        background-size: cover;
     }
 
     .header-text{

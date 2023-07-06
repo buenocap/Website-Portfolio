@@ -9,6 +9,7 @@ This file provides all functionality needed to properly run the game in the user
 """
 
 import numpy as np
+import random
 
 
 #Initialize a profile for the player
@@ -19,6 +20,7 @@ class player:
         self.token = token;
         self.turn = turn;
         self.score = score;
+        self.name = "Player " + str(token);
     
     def get_token(self):
         return self.token;
@@ -45,6 +47,7 @@ class computer:
         self.token = token;
         self.turn = turn;
         self.score = score;
+        self.name = "Computer " + str(token);
 
     def get_token(self):
         return self.token;
@@ -63,6 +66,25 @@ class computer:
 
     def set_score(self, x):
         self.score = x;
+        
+    # Creating AI to play the game
+    def random_placement(self,game):
+        game_board_length = len(game.game_board);
+        placement = random.randrange(0,6);
+        for row in reversed(range(-1,game_board_length)):
+                if row == -1:
+                    game.display_board();
+                    print("Row selected is full making another selection!");
+                    self.random_placement(game);
+                if(game.game_board[row][placement] == 0):
+                    game.game_board[row][placement] = self.token;
+                    print("\n{name} selected column {col}".format(name = self.name, col=placement+1));
+                    game.display_board();
+                    game_status = game.check_win(row,placement,self.token);
+                    return 0
+    
+    def minimax(self):
+        return 0;
 
 #Initalize a profile for the game
 class Tic_Tac_Toe:
@@ -70,6 +92,7 @@ class Tic_Tac_Toe:
     def __init__(self,game_over = True, game_board =[]):
         self.game_status = game_over;
         self.game_board = game_board;
+        self.game_capacity = True;
         
     def get_game_status(self):
         return self.game_status;
@@ -85,6 +108,11 @@ class Tic_Tac_Toe:
         for x in self.game_board:
             print(x)
         return 0;
+    
+    def is_full(self):
+        if 0 not in self.game_board:
+            self.game_capacity = False;
+        return True;
 
 # Allow the player to place a token on the game board
     def place_token(self,token):
@@ -117,7 +145,7 @@ class Tic_Tac_Toe:
                 break;
                 
             if(tracker == 4):
-                print("Player {player} has won the match!\n".format(player=player));
+                print("Player {player} has won the match!\n".format(player = player));
                 self.game_status = False;
                 return 0;    
             column -=1;
@@ -179,7 +207,7 @@ class Tic_Tac_Toe:
         row = original_row_value;
         column = original_column_value;
 
-        #TODO: check right diagonal
+        #Check right diagonal
         while(row > -1 and column > 7):
             
             if(self.game_board[row][column] == player):

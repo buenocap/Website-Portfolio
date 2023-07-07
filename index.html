@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="about-col-1">
+                    <div class="about-col-1 blur" onclick="blurImage()">
                         <img src="./images/portrait.webp" alt="Profile Picture of Pedro Bueno" title="Click to reveal profile image">
                     </div>
 
@@ -179,7 +179,12 @@
                 document.getElementById(tabname).classList.add("active-tab");
             }
         </script>
-
+        <!--Blur About Me Image-->
+        <script>
+            function blurImage(){
+                event.currentTarget.classList.remove("blur");
+            }
+        </script>
         <!--Side Menu Functionality-->
         <script>
             var sidemenu = document.getElementById("sidemenu");

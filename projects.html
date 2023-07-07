@@ -23,6 +23,7 @@
             </nav>
         </div>
     </div>
+<!-- Project List-->
     <div id="projects">
         <div class="container">
             <h1 class="sub-title">Projects</h1>
@@ -40,14 +41,16 @@
                     <button type="button" class="btn"><a href="https://github.com/buenocap/Website-Portfolio/tree/master/connect%20four" target="_blank"></a>Project Repository</button>
                 </div>
                 <div class="row">
-                    <div class="column">
+                    <div class="column c1">
                         <h2 id="scavenger-hunt">Scavenger Hunt</h2>
                         <p>Scavenger Hunt is a 3D first person game. Where the objective is to locate items that are randomly placed around the map. In the map you will also find portals that will lead you to puzzle rooms which award the player with a bonus item upon successful completion of the puzzle. What makes Scavenger Hunt interesting is it is also a procedurally generated game meaning the map generated will almost never be the same twice. This game was created using Unity.<br><br>
-                        <h3>My Role:</h3><br>
-                        I was in charge of developing the algorithm that would generate the game map.
+                        <h3>My Role:</h3>
+                        I was in charge of developing the algorithm that would generate the game map. The map uses perlin noise to create waves which determines which areas are hills and flat lands.
+                        <br>Another task I was assigned was generating the different biomes.In order to achieve this I used the map heights as a threshold in conjuction with perlin noise to determine the different biomes.
+                        <br>Another major task I took lead in was developing a random item placement.
                         </p>
                     </div>
-                    <div class="column">
+                    <div class="column c2">
                         <video controls>
                             <source src="./images/ScavengerHuntVideo.mp4" type="video/mp4">
                         </video>
@@ -56,6 +59,7 @@
             </div>
         </div>
     </div>
+    
 <!--SCRIPT FUNCTIONALITY-->
     <!--Side Menu Functionality-->
     <script>

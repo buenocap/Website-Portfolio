@@ -18,6 +18,7 @@ body{
 .logo{
     font-weight: bolder;
 }
+
 span{
     color: #388e3c;
 }
@@ -173,4 +174,28 @@ a:hover{
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .header-text1{
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        font-size:medium;
+    }
+    
+    .header-text2{
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        font-size: medium;
+    }
+
+    embed{
+        width: 100%;
+    }
+
+    video{
+        width: 100%;
+    }
 }

@@ -199,3 +199,27 @@ a:hover{
         width: 100%;
     }
 }
+
+@media screen and (min-width: 400px) {
+    .header-text1{
+        position: absolute;
+        top: 26%;
+        left: 10%;
+        font-size:small;
+    }
+    
+    .header-text2{
+        position: absolute;
+        top: 28%;
+        left: 10%;
+        font-size: small;
+    }
+
+    embed{
+        width: 100%;
+    }
+
+    video{
+        width: 100%;
+    }
+}
